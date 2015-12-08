@@ -1,16 +1,18 @@
-# AgeBase: Domain Manager
+# RB: Umbraco CleanUp Manager
 
-The Domain Manager package is a handy content dashboard item for viewing domains within an Umbraco application. It allows editors to view each domain, it's culture and which node the domain is associated to. The dashboard item also allows editors to remove domains too. This package is especially good for multi lingual sites.
+The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.
+It displays all orphan records in a paged table, which allows to navigate to, filter, and delete individual records of all at the same time.
+
 
 ## Installation
 
-The Domain Manager package can be installed via the package's page on [our.umbraco.org](http://our.umbraco.org/projects/backoffice-extensions/domain-manager) or via NuGet. If installing via NuGet, use the following package manager command:
+The Domain Manager package can be installed via the package's page on [our.umbraco.org](https://our.umbraco.org/member/127929) or via NuGet. If installing via NuGet, use the following package manager command:
 
-    Install-Package AgeBase.DomainManager
+    Install-Package RB.Umbraco.CleanUpManager
 
 ## Contributing
 
-To raise a new bug, create an [issue](https://github.com/agebase/umbraco-domain-manager/issues) on the Github repository. To fix a bug or add new features or providers, fork the repository and send a [pull request](https://github.com/agebase/umbraco-domain-manager/pulls) with your changes. Feel free to add ideas to the repository's [issues](https://github.com/agebase/umbraco-domain-manager/issues) list if you would to discuss anything related to the package.
+
 
 ## Publishing
 

@@ -78,7 +78,7 @@
       <name>Reckitt Benckiser</name>
       <website>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</website>
     </author>
-    <readme><![CDATA[The Umbraco CleanUp Manager package allows the cleasing of orphan data and document types within an Umbraco application.]]></readme>
+    <readme><![CDATA[The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.]]></readme>
   </info>
   <DocumentTypes />
   <Templates />

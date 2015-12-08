@@ -9,12 +9,12 @@
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
     <projectUrl>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</projectUrl>
     <iconUrl>http://logok.org/wp-content/uploads/2015/01/RB-logo.png</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The Umbraco CleanUp Manager package allows the cleasing of orphan data and document types within an Umbraco application.</description>
-    <summary>Cleasing of orphan data and document types within an Umbraco application.</summary>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.</description>
+    <summary>Cleansing of orphan data and document types within an Umbraco application.</summary>
     <releaseNotes>Initial NuGet package release.</releaseNotes>
     <copyright>Copyright 2015</copyright>
-    <tags>umbraco cleanup clean manager dashboard backoffice rb reckitt benckiser</tags>
+    <tags>umbraco cleanup clean manager cleansing backoffice rb reckitt benckiser </tags>
     <dependencies>
       <dependency id="UmbracoCms.Core" version="7.2.8" />
     </dependencies>
