@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>RB.Umbraco.CleanUpManager.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>RB.Umbraco.CleanUpManager.dll</orgName>
+    </file>
+    <file>
+      <guid>listAnimations.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/animations</orgPath>
+      <orgName>listAnimations.js</orgName>
+    </file>
+    <file>
+      <guid>animations.css</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/css</orgPath>
+      <orgName>animations.css</orgName>
+    </file>
+    <file>
+      <guid>styles.css</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/css</orgPath>
+      <orgName>styles.css</orgName>
+    </file>
+    <file>
+      <guid>data-types.png</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/images</orgPath>
+      <orgName>data-types.png</orgName>
+    </file>
+    <file>
+      <guid>document-types.png</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/images</orgPath>
+      <orgName>document-types.png</orgName>
+    </file>
+    <file>
+      <guid>property-types.png</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/images</orgPath>
+      <orgName>property-types</orgName>
+    </file>
+    <file>
+      <guid>dataTypesController.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/controllers</orgPath>
+      <orgName>dataTypesController.js</orgName>
+    </file>
+    <file>
+      <guid>dataTypesFilter.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/filters</orgPath>
+      <orgName>dataTypesFilter.js</orgName>
+    </file>
+    <file>
+      <guid>dataTypesService.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/services</orgPath>
+      <orgName>dataTypesService.js</orgName>
+    </file>
+    <file>
+      <guid>Index.html</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager</orgPath>
+      <orgName>Index.html</orgName>
+    </file>
+    <file>
+      <guid>Package.manifest</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager</orgPath>
+      <orgName>Package.manifest</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>RB - Umbraco CleanUp Manager</name>
+      <version>1.0.0</version>
+      <license url="http://opensource.org/licenses/MIT">MIT License</license>
+      <url>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</url>
+      <requirements>
+        <major>7</major>
+        <minor>2</minor>
+        <patch>8</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Reckitt Benckiser</name>
+      <website>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</website>
+    </author>
+    <readme><![CDATA[The Umbraco CleanUp Manager package allows the cleasing of orphan data and document types within an Umbraco application.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <title>CleanUp Manager</title>
+    <id>RB.Umbraco.CleanUpManager</id>
+    <version>1.0.0</version>
+    <authors>Edson Ferreira</authors>
+    <owners>RB</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</projectUrl>
+    <iconUrl>http://logok.org/wp-content/uploads/2015/01/RB-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Umbraco CleanUp Manager package allows the cleasing of orphan data and document types within an Umbraco application.</description>
+    <summary>Cleasing of orphan data and document types within an Umbraco application.</summary>
+    <releaseNotes>Initial NuGet package release.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>umbraco cleanup clean manager dashboard backoffice rb reckitt benckiser</tags>
+    <dependencies>
+      <dependency id="UmbracoCms.Core" version="7.2.8" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\source\RB.Umbraco.CleanUpManager\bin\RB.Umbraco.CleanUpManager.dll" target="lib\RB.Umbraco.CleanUpManager.dll" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" target="App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" target="App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" target="App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" target="App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Index.html" target="App_Plugins\RB.Umbraco.CleanUpManager\Index.html" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" target="App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" />
+  </files>
+</package>
