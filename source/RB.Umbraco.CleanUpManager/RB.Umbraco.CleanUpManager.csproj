@@ -24,13 +24,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="cms, Version=1.0.5529.18524, Culture=neutral, processorArchitecture=MSIL">
@@ -82,10 +84,18 @@
     <Compile Include="PagedList\IPagedList.cs" />
     <Compile Include="PagedList\PagedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ContentTypesService.cs" />
     <Compile Include="Services\DataTypesService.cs" />
+    <Compile Include="Services\IContentTypesService.cs" />
     <Compile Include="Services\IDataTypesService.cs" />
+    <Compile Include="Wrappers\IUmbracoContentTypeService.cs" />
     <Compile Include="Wrappers\IUmbracoDatabaseWrapper.cs" />
+    <Compile Include="Wrappers\IUmbracoContentService.cs" />
+    <Compile Include="Wrappers\IUmbracoDataTypeService.cs" />
+    <Compile Include="Wrappers\UmbracoContentTypeServiceWrapper.cs" />
     <Compile Include="Wrappers\UmbracoDatabaseWrapper.cs" />
+    <Compile Include="Wrappers\UmbracoContentServiceWrapper.cs" />
+    <Compile Include="Wrappers\UmbracoDataTypeServiceWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -100,8 +110,11 @@
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" />
+    <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" />
+    <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" />
+    <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\Index.html" />
     <Content Include="App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" />

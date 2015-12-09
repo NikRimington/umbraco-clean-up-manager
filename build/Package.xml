@@ -34,7 +34,7 @@
     <file>
       <guid>property-types.png</guid>
       <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/assets/images</orgPath>
-      <orgName>property-types</orgName>
+      <orgName>property-types.png</orgName>
     </file>
     <file>
       <guid>dataTypesController.js</guid>
@@ -50,6 +50,21 @@
       <guid>dataTypesService.js</guid>
       <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/services</orgPath>
       <orgName>dataTypesService.js</orgName>
+    </file>
+    <file>
+      <guid>contentTypesController.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/controllers</orgPath>
+      <orgName>contentTypesController.js</orgName>
+    </file>
+    <file>
+      <guid>contentTypesFilter.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/filters</orgPath>
+      <orgName>contentTypesFilter.js</orgName>
+    </file>
+    <file>
+      <guid>contentTypesService.js</guid>
+      <orgPath>/App_Plugins/RB.Umbraco.CleanUpManager/services</orgPath>
+      <orgName>contentTypesService.js</orgName>
     </file>
     <file>
       <guid>Index.html</guid>

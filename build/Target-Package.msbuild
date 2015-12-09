@@ -32,8 +32,11 @@
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" DestinationFolder="$(OutputFolder)\assets\images" />
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" DestinationFolder="$(OutputFolder)\assets\images" />
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" DestinationFolder="$(OutputFolder)\controllers" />
-    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" DestinationFolder="$(OutputFolder)\filters" />    
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" DestinationFolder="$(OutputFolder)\filters" />
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" DestinationFolder="$(OutputFolder)\services" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" DestinationFolder="$(OutputFolder)\controllers" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" DestinationFolder="$(OutputFolder)\filters" />
+    <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" DestinationFolder="$(OutputFolder)\services" />    
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\Index.html" DestinationFolder="$(OutputFolder)" />
     <Copy SourceFiles="$(ProjectFolder)\App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" DestinationFolder="$(OutputFolder)" />
   </Target>

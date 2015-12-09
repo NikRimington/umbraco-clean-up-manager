@@ -7,28 +7,24 @@
                                         notificationsService,
                                         dataTypesService) {
 
-        $scope.totalRecords = 0;
-        $scope.totalPages = 0;
-        $scope.pageSize = 10;
-        $scope.currentPage = 1;
+        $scope.totalDataTypeRecords = 0;
+        $scope.totalDataTypePages = 0;
+        $scope.dataTypePageSize = 10;
+        $scope.dataTypeCurrentPage = 1;
         $scope.dataTypes = [];
         $scope.orderby = "PropertyEditorAlias";
         $scope.reverse = false;
-        $scope.searchText = "";
+        $scope.dataTypeSearchText = "";
         $scope.cardAnimationClass = "card-animation";
-        $scope.DisplayModeEnum = {
-            Card: 0,
-            List: 1
-        };
 
         var getDataTypes = function () {
-            dataTypesService.getDataTypes($scope.currentPage - 1, $scope.pageSize, $scope.searchText)
+            dataTypesService.getDataTypes($scope.dataTypeCurrentPage - 1, $scope.dataTypePageSize, $scope.dataTypeSearchText)
             .then(function (data) {
-                $scope.totalRecords = data.totalRecords;
-                $scope.totalPages = Math.ceil(data.totalRecords / $scope.pageSize);
+                $scope.totalDataTypeRecords = data.totalRecords;
+                $scope.totalDataTypePages = Math.ceil(data.totalRecords / $scope.dataTypePageSize);
                 $scope.dataTypes = data.results;
                 if ($scope.dataTypes.length === 0) {
-                    $scope.currentPage = 0;
+                    $scope.dataTypeCurrentPage = 0;
                 }
             }, function (e) {
                 console.log(e);
@@ -37,29 +33,29 @@
         }
 
         $scope.firstPage = function () {
-            if (($scope.currentPage - 1) >= 1) {
-                $scope.currentPage = 1;
+            if (($scope.dataTypeCurrentPage - 1) >= 1) {
+                $scope.dataTypeCurrentPage = 1;
                 getDataTypes();
             }
         };
 
         $scope.previousPage = function () {
-            if (($scope.currentPage - 1) >= 1) {
-                $scope.currentPage--;
+            if (($scope.dataTypeCurrentPage - 1) >= 1) {
+                $scope.dataTypeCurrentPage--;
                 getDataTypes();
             }
         };
 
         $scope.nextPage = function () {
-            if (($scope.currentPage + 1) <= $scope.totalPages) {
-                $scope.currentPage++;
+            if (($scope.dataTypeCurrentPage + 1) <= $scope.totalDataTypePages) {
+                $scope.dataTypeCurrentPage++;
                 getDataTypes();
             }
         };
 
         $scope.lastPage = function () {
-            if (($scope.currentPage + 1) <= $scope.totalPages) {
-                $scope.currentPage = $scope.totalPages;
+            if (($scope.dataTypeCurrentPage + 1) <= $scope.totalDataTypePages) {
+                $scope.dataTypeCurrentPage = $scope.totalDataTypePages;
                 getDataTypes();
             }
         };
@@ -97,7 +93,7 @@
         };
 
         $scope.search = function () {
-            $scope.currentPage = 1;
+            $scope.dataTypeCurrentPage = 1;
             getDataTypes();
         };
 
@@ -110,6 +106,17 @@
         }
 
         init();
+
+        var toggleChevron = function (e) {
+            $(e.target).prev('.panel-heading')
+                       .find("i.indicator")
+                       .toggleClass('icon-navigation-bottom icon-navigation-top');
+        }
+
+        $('#accordion').on('hidden.bs.collapse', toggleChevron);
+        $('#accordion').on('shown.bs.collapse', toggleChevron);
+
+
     };
 
     dataTypesController.$inject = ["$scope",

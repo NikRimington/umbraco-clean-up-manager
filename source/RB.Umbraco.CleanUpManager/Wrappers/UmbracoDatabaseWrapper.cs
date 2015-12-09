@@ -8,7 +8,7 @@ using Umbraco.Web;
 namespace RB.Umbraco.CleanUpManager.Wrappers
 {
     /// <summary>
-    /// Class Umbraco Db Wrapper.
+    /// Class UmbracoDatabaseWrapper.
     /// </summary>
     public class UmbracoDatabaseWrapper : IUmbracoDatabaseWrapper
     {
@@ -105,7 +105,7 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         }
 
         /// <summary>
-        /// Executes the reader.
+        /// Deletes the specified SQL.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sql">The SQL.</param>
