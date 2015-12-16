@@ -4,7 +4,7 @@
     <title>CleanUp Manager</title>
     <id>RB.Umbraco.CleanUpManager</id>
     <version>1.0.0</version>
-    <authors>Edson Ferreira</authors>
+    <authors>RB</authors>
     <owners>RB</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
     <projectUrl>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</projectUrl>
@@ -21,19 +21,19 @@
   </metadata>
   <files>
     <file src="..\source\RB.Umbraco.CleanUpManager\bin\RB.Umbraco.CleanUpManager.dll" target="lib\RB.Umbraco.CleanUpManager.dll" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" target="App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" target="App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" target="App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" target="App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" target="App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" target="App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" target="App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" target="App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Index.html" target="App_Plugins\RB.Umbraco.CleanUpManager\Index.html" />
-    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" target="App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\animations\listAnimations.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" target="content\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\animations.css" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" target="content\App_Plugins\RB.Umbraco.CleanUpManager\assets\css\styles.css" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" target="content\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\data-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" target="content\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\document-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" target="content\App_Plugins\RB.Umbraco.CleanUpManager\assets\images\property-types.png" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\controllers\dataTypesController.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\filters\dataTypesFilter.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\services\dataTypesService.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\controllers\contentTypesController.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\filters\contentTypesFilter.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" target="content\App_Plugins\RB.Umbraco.CleanUpManager\services\contentTypesService.js" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Index.html" target="content\App_Plugins\RB.Umbraco.CleanUpManager\Index.html" />
+    <file src="..\source\RB.Umbraco.CleanUpManager\App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" target="content\App_Plugins\RB.Umbraco.CleanUpManager\Package.manifest" />
   </files>
 </package>

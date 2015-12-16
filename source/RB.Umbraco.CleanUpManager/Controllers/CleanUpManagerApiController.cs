@@ -74,8 +74,6 @@ namespace RB.Umbraco.CleanUpManager.Controllers
             if (!string.IsNullOrEmpty(filter))
             {
                 filteredResults = results.Where(x => x.PropertyEditorAlias.ToLower().Contains(filter.ToLower()) || x.DbType.ToLower().Contains(filter.ToLower())).ToList();
-                //var returnedPages = filteredResults.Count / size;
-                //page = filteredResults.TakePage(index <= returnedPages ? index : 1, size);
             }
 
 
@@ -134,8 +132,6 @@ namespace RB.Umbraco.CleanUpManager.Controllers
             if (!string.IsNullOrEmpty(filter))
             {
                 filteredResults = results.Where(x => x.Alias.ToLower().Contains(filter.ToLower()) || x.Description.ToLower().Contains(filter.ToLower())).ToList();
-                //var returnedPages = filteredResults.Count / size;
-                //page = filteredResults.TakePage(index <= returnedPages ? index : 1, size);
             }
 
 

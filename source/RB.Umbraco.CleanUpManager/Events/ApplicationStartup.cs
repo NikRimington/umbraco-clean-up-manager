@@ -6,19 +6,32 @@ using Umbraco.Core;
 
 namespace RB.Umbraco.CleanUpManager.Events
 {
+    /// <summary>
+    /// Class ApplicationStartup.
+    /// </summary>
     public class ApplicationStartup : ApplicationEventHandler
     {
+        /// <summary>
+        /// Applications the starting.
+        /// </summary>
+        /// <param name="umbracoApplication">The umbraco application.</param>
+        /// <param name="applicationContext">The application context.</param>
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             RouteTable.Routes.MapRoute(
                 "CleanUpManager",
                 "App_Plugins/RB.Umbraco.CleanUpManager/{action}/{id}",
-                new {controller = "CleanUpManager", action = "Resource", id = UrlParameter.Optional});
+                new { controller = "CleanUpManager", action = "Resource", id = UrlParameter.Optional });
 
             //GlobalConfiguration.Configuration.Filters.Add(new PagedListActionFilterAttribute());
 
-        }        
+        }
 
+        /// <summary>
+        /// Applications the started.
+        /// </summary>
+        /// <param name="umbracoApplication">The umbraco application.</param>
+        /// <param name="applicationContext">The application context.</param>
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             // Install

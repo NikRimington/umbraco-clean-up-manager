@@ -83,8 +83,6 @@ namespace RB.Umbraco.CleanUpManager.Services
                 CleanUpDataTypeTable(orphanDataTypes);
                 CleanUpUmbracoNodeTable(orphanDataTypes);
 
-
-
                 return true;
             }
             catch (Exception ex)
