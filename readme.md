@@ -13,7 +13,7 @@ If installing via NuGet, use the following package manager command:
 
 ## Publishing
 
-Remember to include all necessary files within the package.xml file. Run the following script, entering the new version number when prompted to created a published version of the package:
+Remember to include all necessary files within the package.xml file. Run the following script, entering the new version number when prompted to create a published version of the package:
 
     Build\Release.bat
 
