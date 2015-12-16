@@ -1,7 +1,7 @@
 # RB: Umbraco CleanUp Manager
 
 The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.
-It displays all orphan records in a paged table, which allows to navigate to, filter, and delete individual records of all at the same time.
+It displays all orphan records in a paged table, which allows to navigate to, filter, and delete individual records, or, all at the same time.
 Note - Always backup your umbraco database before deleting data or document types - there is no "Undo" after an item has been deleted. 
 
 ## Installation
