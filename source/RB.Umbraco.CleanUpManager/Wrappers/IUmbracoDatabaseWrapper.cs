@@ -3,6 +3,9 @@ using Umbraco.Core.Persistence;
 
 namespace RB.Umbraco.CleanUpManager.Wrappers
 {
+    /// <summary>
+    /// Interface IUmbracoDatabaseWrapper
+    /// </summary>
     public interface IUmbracoDatabaseWrapper
     {
         /// <summary>
@@ -36,5 +39,13 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         /// <param name="args">The arguments.</param>
         /// <returns>List&lt;T&gt;.</returns>
         List<T> ExecuteReader<T>(string sql, params object[] args);
+
+        /// <summary>
+        /// Deletes the specified SQL.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql">The SQL.</param>
+        /// <returns>System.Int32.</returns>
+        int Delete<T>(string sql);
     }
 }

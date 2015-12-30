@@ -16,11 +16,11 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         /// Gets the database.
         /// </summary>
         /// <value>The database.</value>
-        public Database Db
+        public virtual Database Db
         {
             get
             {
-                return UmbracoContext.Current.Application.DatabaseContext.Database;                
+                return UmbracoContext.Current.Application.DatabaseContext.Database;
             }
         }
 
@@ -31,7 +31,7 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         /// <param name="sql">The SQL.</param>
         /// <param name="args">The arguments.</param>
         /// <returns>T.</returns>
-        public T ExecuteScalar<T>(string sql, params object[] args)
+        public virtual T ExecuteScalar<T>(string sql, params object[] args)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         /// <typeparam name="T"></typeparam>
         /// <param name="sql">The SQL.</param>
         /// <returns>T.</returns>
-        public T ExecuteScalar<T>(Sql sql)
+        public virtual T ExecuteScalar<T>(Sql sql)
         {
             try
             {
@@ -80,38 +80,7 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
         /// <param name="sql">The SQL.</param>
         /// <param name="args">The arguments.</param>
         /// <returns>List&lt;T&gt;.</returns>
-        public List<T> ExecuteReader<T>(string sql, params object[] args)
-        {
-            
-            try
-            {
-                Db.OpenSharedConnection();    
-                using (var command = Db.CreateCommand(Db.Connection, sql, args))
-                {
-                    var data = command.ExecuteReader();
-                    var results = data.MapToList<T>();
-                    return results;
-                }
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Error<UmbracoDatabaseWrapper>(string.Format("Error Execute Reader. SQL: {0};", sql), ex);
-                throw;
-            }
-            finally
-            {
-                Db.CloseSharedConnection();
-            }
-        }
-
-        /// <summary>
-        /// Deletes the specified SQL.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sql">The SQL.</param>
-        /// <param name="args">The arguments.</param>
-        /// <returns>List&lt;T&gt;.</returns>
-        public List<T> Delete<T>(string sql, params object[] args)
+        public virtual List<T> ExecuteReader<T>(string sql, params object[] args)
         {
 
             try
@@ -132,6 +101,26 @@ namespace RB.Umbraco.CleanUpManager.Wrappers
             finally
             {
                 Db.CloseSharedConnection();
+            }
+        }
+
+
+        /// <summary>
+        /// Deletes the specified SQL.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql">The SQL.</param>
+        /// <returns>System.Int32.</returns>
+        public virtual int Delete<T>(string sql)
+        {
+            try
+            {
+                return Db.Delete<T>(sql);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error<UmbracoDatabaseWrapper>(string.Format("Error Execute Reader. SQL: {0};", sql), ex);
+                throw;
             }
         }
 

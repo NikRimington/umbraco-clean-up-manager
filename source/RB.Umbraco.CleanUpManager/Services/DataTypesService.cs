@@ -24,7 +24,7 @@ namespace RB.Umbraco.CleanUpManager.Services
                                                      "FROM [cmsDataType] as dt " +
                                                      "WHERE dt.nodeId not in (SELECT pt.dataTypeId " +
                                                      "FROM cmsPropertyType as pt " +
-                                                     "WHERE  pt.dataTypeId = dt.nodeId)";                                                        
+                                                     "WHERE  pt.dataTypeId = dt.nodeId)";
 
         #endregion
 
@@ -83,13 +83,15 @@ namespace RB.Umbraco.CleanUpManager.Services
                 CleanUpDataTypeTable(orphanDataTypes);
                 CleanUpUmbracoNodeTable(orphanDataTypes);
 
+                LogCleanseOperations(orphanDataTypes);
+
                 return true;
             }
             catch (Exception ex)
             {
                 LogHelper.Error<DataTypesService>("Error getting orphan data types.", ex);
                 return false;
-            }                                    
+            }
         }
 
         /// <summary>
@@ -101,14 +103,17 @@ namespace RB.Umbraco.CleanUpManager.Services
         {
             try
             {
-                var dataType = _db.ExecuteReader<CmsDataType>(SelectOrphanDataTypes).FirstOrDefault(x => x.NodeId == nodeId);                                         
+                var dataType = _db.ExecuteReader<CmsDataType>(SelectOrphanDataTypes).FirstOrDefault(x => x.NodeId == nodeId);
+
+                if (dataType == null)
+                    return true;
 
                 CleanUpPropertyTypeTable(dataType);
                 CleanUpDataTypePreValuesTable(dataType);
                 CleanUpDataTypeTable(dataType);
                 CleanUpUmbracoNodeTable(dataType);
-                
-                LogCleanseOperation(dataType);    
+
+                LogCleanseOperation(dataType);
 
                 return true;
             }
@@ -132,7 +137,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// <param name="orphanDataTypes">The orphan data types.</param>
         /// <exception cref="ArgumentNullException">orphanDataTypes</exception>
         protected internal virtual void CleanUpPropertyTypeTable(List<CmsDataType> orphanDataTypes)
-        {            
+        {
             try
             {
                 if (orphanDataTypes == null)
@@ -140,12 +145,13 @@ namespace RB.Umbraco.CleanUpManager.Services
 
 
                 var ids = string.Join(",", orphanDataTypes.Select(x => x.NodeId));
-                _db.Db.Delete<CmsPropertyType>("WHERE DataTypeId IN (" + ids + ")");
+                _db.Delete<CmsPropertyType>("WHERE DataTypeId IN (" + ids + ")");
 
             }
             catch (Exception ex)
             {
                 LogHelper.Error<DataTypesService>("Error cleaning Up data types", ex);
+                throw;
             }
 
         }
@@ -163,12 +169,13 @@ namespace RB.Umbraco.CleanUpManager.Services
 
 
                 var ids = string.Join(",", orphanDataTypes.Select(x => x.NodeId));
-                _db.Db.Delete<CmsDataTypePreValues>("WHERE DataTypeNodeId IN (" + ids + ")");
+                _db.Delete<CmsDataTypePreValues>("WHERE DataTypeNodeId IN (" + ids + ")");
 
             }
             catch (Exception ex)
             {
                 LogHelper.Error<DataTypesService>("Error cleaning Up data types", ex);
+                throw;
             }
         }
 
@@ -186,12 +193,13 @@ namespace RB.Umbraco.CleanUpManager.Services
 
 
                 var ids = string.Join(",", dataTypeIds.Select(x => x.NodeId));
-                _db.Db.Delete<CmsDataType>("WHERE nodeId IN (" + ids + ")");
+                _db.Delete<CmsDataType>("WHERE nodeId IN (" + ids + ")");
 
             }
             catch (Exception ex)
             {
                 LogHelper.Error<DataTypesService>("Error cleaning Up data types", ex);
+                throw;
             }
 
         }
@@ -210,12 +218,13 @@ namespace RB.Umbraco.CleanUpManager.Services
 
 
                 var ids = string.Join(",", dataTypeIds.Select(x => x.NodeId));
-                _db.Db.Delete<UmbracoNode>("WHERE Id IN (" + ids + ")");
+                _db.Delete<UmbracoNode>("WHERE Id IN (" + ids + ")");
 
             }
             catch (Exception ex)
             {
                 LogHelper.Error<DataTypesService>("Error cleaning Up data types", ex);
+                throw;
             }
 
         }
@@ -236,7 +245,7 @@ namespace RB.Umbraco.CleanUpManager.Services
                 if (dataType == null)
                     throw new ArgumentNullException("dataType");
 
-                _db.Db.Delete<CmsDataType>("WHERE nodeId = " + dataType.NodeId);                            
+                _db.Delete<CmsDataType>("WHERE nodeId = " + dataType.NodeId);
             }
             catch (Exception ex)
             {
@@ -256,8 +265,8 @@ namespace RB.Umbraco.CleanUpManager.Services
             {
                 if (dataType == null)
                     throw new ArgumentNullException("dataType");
-                
-                _db.Db.Delete<CmsDataTypePreValues>("WHERE DataTypeNodeId = " + dataType.NodeId);                               
+
+                _db.Delete<CmsDataTypePreValues>("WHERE DataTypeNodeId = " + dataType.NodeId);
 
             }
             catch (Exception ex)
@@ -279,7 +288,7 @@ namespace RB.Umbraco.CleanUpManager.Services
                 if (dataType == null)
                     throw new ArgumentNullException("dataType");
 
-                _db.Db.Delete<CmsPropertyType>("WHERE DataTypeId = " + dataType.NodeId);
+                _db.Delete<CmsPropertyType>("WHERE DataTypeId = " + dataType.NodeId);
 
             }
             catch (Exception ex)
@@ -301,7 +310,7 @@ namespace RB.Umbraco.CleanUpManager.Services
                 if (dataType == null)
                     throw new ArgumentNullException("dataType");
 
-                _db.Db.Delete<UmbracoNode>("WHERE Id = " + dataType.NodeId); 
+                _db.Delete<UmbracoNode>("WHERE Id = " + dataType.NodeId);
 
             }
             catch (Exception ex)
@@ -320,17 +329,17 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// </summary>
         /// <param name="dataTypes">The data types.</param>
         /// <exception cref="ArgumentNullException">dataTypes</exception>
-        protected internal virtual void LogCleanseOperation(List<CmsDataType> dataTypes)
+        protected internal virtual void LogCleanseOperations(List<CmsDataType> dataTypes)
         {
-            if (dataTypes == null) 
-                throw new ArgumentNullException("dataTypes");   
-         
+            if (dataTypes == null)
+                throw new ArgumentNullException("dataTypes");
+
             try
             {
                 foreach (var dataType in dataTypes)
                 {
-                    LogCleanseOperation(dataType);    
-                }                
+                    LogCleanseOperation(dataType);
+                }
             }
             catch (Exception ex)
             {
@@ -346,12 +355,12 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// <exception cref="ArgumentNullException">dataType</exception>
         protected internal virtual void LogCleanseOperation(CmsDataType dataType)
         {
-            if (dataType == null) 
+            if (dataType == null)
                 throw new ArgumentNullException("dataType");
-            
+
             try
             {
-                LogHelper.Info<DataTypesService>(string.Format("Successfully cleansed data type {0} - (id: {1})", 
+                LogHelper.Info<DataTypesService>(string.Format("Successfully cleansed data type {0} - (id: {1})",
                                                    dataType.PropertyEditorAlias, dataType.NodeId));
             }
             catch (Exception ex)
