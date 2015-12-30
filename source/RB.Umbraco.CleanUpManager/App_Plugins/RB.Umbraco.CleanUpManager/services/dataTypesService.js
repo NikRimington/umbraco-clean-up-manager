@@ -2,7 +2,7 @@
 
     var dataTypesService = function ($http) {
 
-        var serviceBase = "backoffice/RBCleanUpManager/CleanUpManager/",
+        var serviceBase = "backoffice/RBCleanUpManager/CleanUpManagerApi/",
             factory = {};
 
         factory.getDataTypes = function (pageIndex, pageSize, filter) {
@@ -37,7 +37,7 @@
 
         function buildPagingUri(pageIndex, pageSize, filter) {
             var uri = "?pageSize=" + pageSize + "&pageIndex=" + pageIndex;
-            if (filter !== undefined) {
+            if (filter !== undefined && filter !== "") {
                 uri = uri + "&filter=" + filter;
             }
             return uri;

@@ -2,8 +2,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using RB.Umbraco.CleanUpManager.Services;
 using Umbraco.Web.Mvc;
+using RB.Umbraco.CleanUpManager.Services;
 using Umbraco.Web.WebApi;
 using RB.Umbraco.CleanUpManager.Extensions;
 using RB.Umbraco.CleanUpManager.Models;
@@ -13,10 +13,10 @@ using Umbraco.Core.Models;
 namespace RB.Umbraco.CleanUpManager.Controllers
 {
     /// <summary>
-    /// Class CleanUpManagerController.
+    /// Class CleanUpManagerApiController.
     /// </summary>
     [PluginController("RBCleanUpManager")]
-    public class CleanUpManagerController : UmbracoAuthorizedApiController
+    public class CleanUpManagerApiController : UmbracoAuthorizedApiController
     {
         #region Members
         /// <summary>
@@ -31,20 +31,20 @@ namespace RB.Umbraco.CleanUpManager.Controllers
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="CleanUpManagerController"/> class.
+        /// Initializes a new instance of the <see cref="CleanUpManagerApiController"/> class.
         /// </summary>
-        public CleanUpManagerController()
+        public CleanUpManagerApiController()
         {
             _dataTypesService = new DataTypesService();
             _contentTypesService = new ContentTypesService();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CleanUpManagerController"/> class.
+        /// Initializes a new instance of the <see cref="CleanUpManagerApiController"/> class.
         /// </summary>
         /// <param name="dataTypesService">The data types service.</param>
         /// <param name="contentTypesService">The content types service.</param>
-        public CleanUpManagerController(IDataTypesService dataTypesService,
+        public CleanUpManagerApiController(IDataTypesService dataTypesService,
                                         IContentTypesService contentTypesService)
         {
             _dataTypesService = dataTypesService;
@@ -59,6 +59,7 @@ namespace RB.Umbraco.CleanUpManager.Controllers
         /// </summary>
         /// <returns>HttpResponseMessage.</returns>
         [HttpGet]
+        [AllowAnonymous]
         //[PagedListActionFilter]
         public HttpResponseMessage GetOrphanDataTypes()
         {
@@ -120,6 +121,7 @@ namespace RB.Umbraco.CleanUpManager.Controllers
         /// <returns>HttpResponseMessage.</returns>
         [HttpGet]
         //[PagedListActionFilter]
+        [AllowAnonymous]
         public HttpResponseMessage GetOrphanContentTypes()
         {
             var results = _contentTypesService.GetOrphanContentTypes();
