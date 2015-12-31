@@ -32,25 +32,25 @@ namespace RB.Umbraco.CleanUpManager.PagedList
         /// Gets the index of the page.
         /// </summary>
         /// <value>The index of the page.</value>
-        public int PageIndex { get; private set; }
+        public int PageIndex { get; }
 
         /// <summary>
         /// Gets the size of the page.
         /// </summary>
         /// <value>The size of the page.</value>
-        public int PageSize { get; private set; }
+        public int PageSize { get; }
 
         /// <summary>
         /// Gets the total count.
         /// </summary>
         /// <value>The total count.</value>
-        public int TotalCount { get; private set; }
+        public int TotalCount { get; }
 
         /// <summary>
         /// Gets the list.
         /// </summary>
         /// <value>The list.</value>
-        public IList<T> List { get; private set; }
+        public IList<T> List { get; }
 
         /// <summary>
         /// Gets the list.

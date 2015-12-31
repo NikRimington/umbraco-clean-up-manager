@@ -27,21 +27,12 @@ namespace RB.Umbraco.CleanUpManager.Helpers
             // Loop through each tab to see if the Domain
             // Manager tab exists in any section
 
-            var tabs = configXml.XPathSelectElements("//section/tab");
+            var tabs = configXml.XPathSelectElements("//section/tab").ToList();
             if (tabs.Any())
             {
-                foreach (var tab in tabs)
-                {
-                    var control = tab.XPathSelectElement("control");
-                    if (control == null)
-                        continue;
-
-                    // If it exists, there is no need to carry
-                    // on searching through other tabs
-
-                    if (control.Value.Equals(path))
-                        return;
-                }
+                if (tabs.Select(tab => tab.XPathSelectElement("control")).Where(control => control != null)
+                                                                         .Any(control => control.Value.Equals(path)))
+                { return; }
             }
 
             // If we have got this far, we know that the Domain

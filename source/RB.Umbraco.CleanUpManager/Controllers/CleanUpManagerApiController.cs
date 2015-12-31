@@ -6,9 +6,6 @@ using Umbraco.Web.Mvc;
 using RB.Umbraco.CleanUpManager.Services;
 using Umbraco.Web.WebApi;
 using RB.Umbraco.CleanUpManager.Extensions;
-using RB.Umbraco.CleanUpManager.Models;
-using RB.Umbraco.CleanUpManager.PagedList;
-using Umbraco.Core.Models;
 
 namespace RB.Umbraco.CleanUpManager.Controllers
 {
@@ -70,7 +67,6 @@ namespace RB.Umbraco.CleanUpManager.Controllers
             var index = Request.GetPageIndex();
             var size = Request.GetPageSize();
             var filter = Request.GetFilter();
-            IPagedList<CmsDataType> page = null;
 
             if (!string.IsNullOrEmpty(filter))
             {
@@ -82,7 +78,7 @@ namespace RB.Umbraco.CleanUpManager.Controllers
 
             index = index < 0 ? 0 : index;
 
-            page = filteredResults.TakePage(index, size);
+            var page = filteredResults.TakePage(index, size);
             return Request.CreateResponse(HttpStatusCode.OK, page);
         }
 
@@ -129,7 +125,6 @@ namespace RB.Umbraco.CleanUpManager.Controllers
             var index = Request.GetPageIndex();
             var size = Request.GetPageSize();
             var filter = Request.GetFilter();
-            IPagedList<IContentType> page = null;
 
             if (!string.IsNullOrEmpty(filter))
             {
@@ -141,7 +136,7 @@ namespace RB.Umbraco.CleanUpManager.Controllers
 
             index = index < 0 ? 0 : index;
 
-            page = filteredResults.TakePage(index, size);
+            var page = filteredResults.TakePage(index, size);
             return Request.CreateResponse(HttpStatusCode.OK, page);
         }
 
