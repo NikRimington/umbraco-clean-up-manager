@@ -33,7 +33,7 @@ namespace RB.Umbraco.CleanUpManager.Helpers
                 foreach (var tab in tabs)
                 {
                     var control = tab.XPathSelectElement("control");
-                    if (control == null) 
+                    if (control == null)
                         continue;
 
                     // If it exists, there is no need to carry

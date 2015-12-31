@@ -3,6 +3,9 @@ using Umbraco.Core.Models;
 
 namespace RB.Umbraco.CleanUpManager.Services
 {
+    /// <summary>
+    /// Interface IContentTypesService
+    /// </summary>
     public interface IContentTypesService
     {
         /// <summary>

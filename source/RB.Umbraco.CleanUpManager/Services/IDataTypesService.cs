@@ -13,17 +13,17 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// <summary>
         /// Gets the orphan data types.
         /// </summary>
-        /// <returns>IQueryable&lt;CmsDataType&gt;.</returns>
+        /// <returns>List&lt;CmsDataType&gt;.</returns>
         List<CmsDataType> GetOrphanDataTypes();
 
         /// <summary>
-        /// Deletes up orphan data types.
+        /// Deletes the orphan data types.
         /// </summary>
-        /// <returns><c>true</c> if success, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         bool DeleteOrphanDataTypes();
 
         /// <summary>
-        /// Deletes the type of up orphan data.
+        /// Deletes the type of the orphan data.
         /// </summary>
         /// <param name="nodeId">The node identifier.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>

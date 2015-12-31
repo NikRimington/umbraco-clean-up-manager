@@ -11,16 +11,31 @@ using Umbraco.Core.Persistence;
 
 namespace RB.Umbraco.CleanUpManager.Tests
 {
+    /// <summary>
+    /// Class DataTypesServiceTests.
+    /// </summary>
     [TestClass]
     public class DataTypesServiceTests
     {
         #region Declarations
+        /// <summary>
+        /// The _mock data types
+        /// </summary>
         private List<CmsDataType> _mockDataTypes;
+        /// <summary>
+        /// The _umbraco database wrapper mock
+        /// </summary>
         private Mock<IUmbracoDatabaseWrapper> _umbracoDatabaseWrapperMock;
+        /// <summary>
+        /// The _data types service mock
+        /// </summary>
         private Mock<DataTypesService> _dataTypesServiceMock;
         #endregion
 
         #region Setup Methods
+        /// <summary>
+        /// Setups this instance.
+        /// </summary>
         [TestInitialize]
         public void Setup()
         {
@@ -29,6 +44,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             _dataTypesServiceMock = new Mock<DataTypesService>(_umbracoDatabaseWrapperMock.Object) { CallBase = true };
         }
 
+        /// <summary>
+        /// Setups the umbraco database wrapper mock.
+        /// </summary>
         private void SetupUmbracoDatabaseWrapperMock()
         {
             _umbracoDatabaseWrapperMock = new Mock<IUmbracoDatabaseWrapper>();
@@ -52,6 +70,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Setups the data types.
+        /// </summary>
         private void SetupDataTypes()
         {
             _mockDataTypes = new List<CmsDataType>
@@ -84,6 +105,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         #region Test Public Methods
 
+        /// <summary>
+        /// Shoulds the get orphan data types.
+        /// </summary>
         [TestMethod]
         public void ShouldGetOrphanDataTypes()
         {
@@ -99,6 +123,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the delete orphan data types.
+        /// </summary>
         [TestMethod]
         public void ShouldDeleteOrphanDataTypes()
         {
@@ -135,6 +162,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the type of the delete single orphan data.
+        /// </summary>
         [TestMethod]
         public void ShouldDeleteSingleOrphanDataType()
         {
@@ -172,6 +202,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the return true if data type does not exist.
+        /// </summary>
         [TestMethod]
         public void ShouldReturnTrueIfDataTypeDoesNotExist()
         {
@@ -196,6 +229,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         #region Test Interval Methods
 
+        /// <summary>
+        /// Shoulds the fail to clean up property type table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpPropertyTypeTableIfInputParamterOrphanDataTypesIsNull()
@@ -206,6 +242,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up property type table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpPropertyTypeTable()
         {
@@ -217,6 +256,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up data type pre values table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpDataTypePreValuesTableIfInputParamterOrphanDataTypesIsNull()
@@ -227,6 +269,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up data type pre values table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpDataTypePreValuesTable()
         {
@@ -238,6 +283,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up data type table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpDataTypeTableIfInputParamterOrphanDataTypesIsNull()
@@ -248,6 +296,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up data type table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpDataTypeTable()
         {
@@ -259,6 +310,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up umbraco node table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpUmbracoNodeTableIfInputParamterOrphanDataTypesIsNull()
@@ -269,6 +323,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up umbraco node table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpUmbracoNodeTable()
         {
@@ -280,6 +337,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up single property type table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpSinglePropertyTypeTableIfInputParamterOrphanDataTypesIsNull()
@@ -290,6 +350,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up single property type table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpSinglePropertyTypeTable()
         {
@@ -301,6 +364,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up single data type pre values table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpSingleDataTypePreValuesTableIfInputParamterOrphanDataTypesIsNull()
@@ -311,6 +377,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up single data type pre values table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpSingleDataTypePreValuesTable()
         {
@@ -322,6 +391,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up single data type table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpSingleDataTypeTableIfInputParamterOrphanDataTypesIsNull()
@@ -332,6 +404,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up single data type table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpSingleDataTypeTable()
         {
@@ -343,6 +418,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to clean up single umbraco node table if input paramter orphan data types is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToCleanUpSingleUmbracoNodeTableIfInputParamterOrphanDataTypesIsNull()
@@ -353,6 +431,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the clean up single umbraco node table.
+        /// </summary>
         [TestMethod]
         public void ShouldCleanUpSingleUmbracoNodeTable()
         {
@@ -364,6 +445,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to execute log cleanse operations if input parameter data type is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToExecuteLogCleanseOperationsIfInputParameterDataTypeIsNull()
@@ -374,6 +458,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the log cleanse operations.
+        /// </summary>
         [TestMethod]
         public void ShouldLogCleanseOperations()
         {
@@ -388,6 +475,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
 
         }
 
+        /// <summary>
+        /// Shoulds the fail to execute log cleanse operation if input parameter data type is null.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ShouldFailToExecuteLogCleanseOperationIfInputParameterDataTypeIsNull()
@@ -398,6 +488,9 @@ namespace RB.Umbraco.CleanUpManager.Tests
             Assert.Fail();
         }
 
+        /// <summary>
+        /// Shoulds the log cleanse operation.
+        /// </summary>
         [TestMethod]
         public void ShouldLogCleanseOperation()
         {

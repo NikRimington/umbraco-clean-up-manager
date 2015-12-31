@@ -135,7 +135,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up property type table.
         /// </summary>
         /// <param name="orphanDataTypes">The orphan data types.</param>
-        /// <exception cref="ArgumentNullException">orphanDataTypes</exception>
+        /// <exception cref="System.ArgumentNullException">orphanDataTypes</exception>
         protected internal virtual void CleanUpPropertyTypeTable(List<CmsDataType> orphanDataTypes)
         {
             try
@@ -159,7 +159,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up data type pre values table.
         /// </summary>
         /// <param name="orphanDataTypes">The orphan data types.</param>
-        /// <exception cref="ArgumentNullException">orphanDataTypes</exception>
+        /// <exception cref="System.ArgumentNullException">orphanDataTypes</exception>
         protected internal virtual void CleanUpDataTypePreValuesTable(List<CmsDataType> orphanDataTypes)
         {
             try
@@ -183,7 +183,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up data type table.
         /// </summary>
         /// <param name="dataTypeIds">The data type ids.</param>
-        /// <exception cref="ArgumentNullException">dataTypeIds</exception>
+        /// <exception cref="System.ArgumentNullException">dataTypeIds</exception>
         protected internal virtual void CleanUpDataTypeTable(List<CmsDataType> dataTypeIds)
         {
             try
@@ -208,7 +208,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up umbraco node table.
         /// </summary>
         /// <param name="dataTypeIds">The data type ids.</param>
-        /// <exception cref="ArgumentNullException">dataTypeIds</exception>
+        /// <exception cref="System.ArgumentNullException">dataTypeIds</exception>
         protected internal virtual void CleanUpUmbracoNodeTable(List<CmsDataType> dataTypeIds)
         {
             try
@@ -237,7 +237,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up data type table.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        /// <exception cref="ArgumentNullException">dataType</exception>
+        /// <exception cref="System.ArgumentNullException">dataType</exception>
         protected internal virtual void CleanUpDataTypeTable(CmsDataType dataType)
         {
             try
@@ -258,7 +258,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up data type pre values table.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        /// <exception cref="ArgumentNullException">dataType</exception>
+        /// <exception cref="System.ArgumentNullException">dataType</exception>
         protected internal virtual void CleanUpDataTypePreValuesTable(CmsDataType dataType)
         {
             try
@@ -280,7 +280,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up property type table.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        /// <exception cref="ArgumentNullException">dataType</exception>
+        /// <exception cref="System.ArgumentNullException">dataType</exception>
         protected internal virtual void CleanUpPropertyTypeTable(CmsDataType dataType)
         {
             try
@@ -302,7 +302,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Cleans up umbraco node table.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        /// <exception cref="ArgumentNullException">dataType</exception>
+        /// <exception cref="System.ArgumentNullException">dataType</exception>
         protected internal virtual void CleanUpUmbracoNodeTable(CmsDataType dataType)
         {
             try
@@ -325,10 +325,10 @@ namespace RB.Umbraco.CleanUpManager.Services
         #region Logging Methods
 
         /// <summary>
-        /// Logs the cleanse operation.
+        /// Logs the cleanse operations.
         /// </summary>
         /// <param name="dataTypes">The data types.</param>
-        /// <exception cref="ArgumentNullException">dataTypes</exception>
+        /// <exception cref="System.ArgumentNullException">dataTypes</exception>
         protected internal virtual void LogCleanseOperations(List<CmsDataType> dataTypes)
         {
             if (dataTypes == null)
@@ -352,7 +352,7 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// Logs the cleanse operation.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        /// <exception cref="ArgumentNullException">dataType</exception>
+        /// <exception cref="System.ArgumentNullException">dataType</exception>
         protected internal virtual void LogCleanseOperation(CmsDataType dataType)
         {
             if (dataType == null)
