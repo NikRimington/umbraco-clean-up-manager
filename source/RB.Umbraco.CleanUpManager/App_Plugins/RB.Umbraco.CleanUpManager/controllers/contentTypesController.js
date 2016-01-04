@@ -93,6 +93,19 @@
         };
 
         $scope.search = function () {
+            $scope.contentTypesSearchForm.$setPristine();
+            $scope.contentTypeCurrentPage = 1;
+            getContentTypes();
+        };
+
+        $scope.clearSearch = function () {
+            $scope.contentTypeSearchText = "";
+            $scope.contentTypesSearchForm.$setPristine();
+            $scope.contentTypeCurrentPage = 1;
+            getContentTypes();
+        };
+
+        $scope.refreshContentTypes = function () {
             $scope.contentTypeCurrentPage = 1;
             getContentTypes();
         };
@@ -109,10 +122,10 @@
     };
 
     contentTypesController.$inject = ["$scope",
-                                   "$filter",
-                                   "$timeout",
-                                   "notificationsService",
-                                   "RB.Umbraco.CleanUpManager.ContentTypesService"];
+                                      "$filter",
+                                      "$timeout",
+                                      "notificationsService",
+                                      "RB.Umbraco.CleanUpManager.ContentTypesService"];
 
     angular.module("umbraco").controller("RB.Umbraco.CleanUpManager.ContentTypesController", contentTypesController);
 

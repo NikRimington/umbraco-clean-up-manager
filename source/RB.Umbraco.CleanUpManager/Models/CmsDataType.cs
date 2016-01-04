@@ -26,5 +26,8 @@ namespace RB.Umbraco.CleanUpManager.Models
         /// </summary>
         /// <value>The property editor alias.</value>
         public string PropertyEditorAlias { get; set; }
+
+
+        public string Name { get; set; }
     }
 }

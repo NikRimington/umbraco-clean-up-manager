@@ -3,16 +3,20 @@
   <metadata>
     <title>CleanUp Manager</title>
     <id>RB.Umbraco.CleanUpManager</id>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <authors>RB</authors>
     <owners>RB</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
     <projectUrl>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</projectUrl>
     <iconUrl>http://logok.org/wp-content/uploads/2015/01/RB-logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.</description>
-    <summary>Cleansing of orphan data and document types within an Umbraco application.</summary>
-    <releaseNotes>Initial NuGet package release.</releaseNotes>
+    <description>The Umbraco CleanUp Manager allows the cleansing of orphan Data and Content Types within an Umbraco application.</description>
+    <summary>Cleansing of orphan data and content types within an Umbraco application.</summary>
+    <releaseNotes>
+      # v.1.0.0 - Initial NuGet package release.
+      # v.1.0.1 - Added the Name field to the Data Types so it can be used to differentiate when orphan Data Types have the same Property Type Alias.
+      # v.1.0.2 - Added a Refresh Button and Clear Search Button to the grid toolbar. Reset of ng-dirty class on form input element after search is performed.
+    </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>umbraco cleanup clean manager cleansing backoffice rb reckitt benckiser </tags>
     <dependencies>

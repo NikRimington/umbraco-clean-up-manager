@@ -70,7 +70,7 @@ namespace RB.Umbraco.CleanUpManager.Controllers
 
             if (!string.IsNullOrEmpty(filter))
             {
-                filteredResults = results.Where(x => x.PropertyEditorAlias.ToLower().Contains(filter.ToLower()) || x.DbType.ToLower().Contains(filter.ToLower())).ToList();
+                filteredResults = results.Where(x => x.PropertyEditorAlias.ToLower().Contains(filter.ToLower()) || x.Name.ToLower().Contains(filter.ToLower()) || x.DbType.ToLower().Contains(filter.ToLower())).ToList();
             }
 
 

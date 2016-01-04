@@ -93,9 +93,25 @@
         };
 
         $scope.search = function () {
+            $scope.dataTypesSearchForm.$setPristine();
             $scope.dataTypeCurrentPage = 1;
             getDataTypes();
         };
+
+        $scope.clearSearch = function () {
+            $scope.dataTypeSearchText = "";
+            $scope.dataTypesSearchForm.$setPristine();
+            $scope.dataTypeCurrentPage = 1;
+            getDataTypes();
+        };
+
+
+
+        $scope.refreshDataTypes = function () {
+            $scope.dataTypeCurrentPage = 1;
+            getDataTypes();
+        };
+
 
         $scope.showNode = function (nodeId) {
             window.location = "/umbraco#/developer/datatype/edit/" + nodeId;

@@ -17,14 +17,15 @@ namespace RB.Umbraco.CleanUpManager.Services
         /// The _DB
         /// </summary>
         private readonly IUmbracoDatabaseWrapper _db;
+
         /// <summary>
         /// The select orphan data types
         /// </summary>
-        private const string SelectOrphanDataTypes = "SELECT DISTINCT(dt.nodeId), dt.pk, dt.dbType, dt.propertyEditorAlias " +
-                                                     "FROM [cmsDataType] as dt " +
-                                                     "WHERE dt.nodeId not in (SELECT pt.dataTypeId " +
-                                                     "FROM cmsPropertyType as pt " +
-                                                     "WHERE  pt.dataTypeId = dt.nodeId)";
+        private const string SelectOrphanDataTypes =
+            "SELECT DISTINCT dt.nodeId, dt.pk, dt.dbType, dt.propertyEditorAlias, un.text AS name " +
+            "FROM dbo.cmsDataType AS dt INNER JOIN " +
+            "dbo.umbracoNode AS un ON dt.nodeId = un.id " +
+            "WHERE (dt.nodeId NOT IN (SELECT dataTypeId FROM dbo.cmsPropertyType AS pt WHERE (dataTypeId = dt.nodeId)))";
 
         #endregion
 

@@ -80,7 +80,7 @@
   <info>
     <package>
       <name>RB One Digital CMS - Umbraco CleanUp Manager</name>
-      <version>1.0.0</version>
+      <version>1.0.2</version>
       <license url="http://opensource.org/licenses/MIT">MIT License</license>
       <url>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</url>
       <requirements>
@@ -93,7 +93,7 @@
       <name>Reckitt Benckiser</name>
       <website>https://bitbucket.org/rbdigital/umbraco-clean-up-manager/</website>
     </author>
-    <readme><![CDATA[The Umbraco CleanUp Manager allows the cleansing of orphan Data and Document Types within an Umbraco application.]]></readme>
+    <readme><![CDATA[The Umbraco CleanUp Manager allows the cleansing of orphan Data and Content Types within an Umbraco application.]]></readme>
   </info>
   <DocumentTypes />
   <Templates />
